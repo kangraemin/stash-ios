@@ -105,35 +105,6 @@ struct FilterChipView: View {
     }
 }
 
-// MARK: - ContentCardView (placeholder — Step 2.8에서 교체)
-
-struct ContentCardView: View {
-    let content: SavedContent
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            RoundedRectangle(cornerRadius: 8)
-                .fill(Color(.systemGray5))
-                .aspectRatio(16 / 9, contentMode: .fit)
-                .overlay {
-                    Text(content.contentType.rawValue)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-
-            Text(content.title)
-                .font(.footnote)
-                .fontWeight(.medium)
-                .lineLimit(2)
-
-            Text(content.url.host ?? "")
-                .font(.caption2)
-                .foregroundStyle(.secondary)
-                .lineLimit(1)
-        }
-    }
-}
-
 // MARK: - Preview
 
 #Preview {
