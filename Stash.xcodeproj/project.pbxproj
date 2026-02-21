@@ -30,6 +30,7 @@
 		AA000012 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA000013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA000014 /* StashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashTests.swift; sourceTree = "<group>"; };
+		AA000015 /* Stash.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Stash.entitlements; sourceTree = "<group>"; };
 		AA000060 /* Stash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA000061 /* StashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -66,6 +67,7 @@
 		AA000081 /* Stash */ = {
 			isa = PBXGroup;
 			children = (
+				AA000015 /* Stash.entitlements */,
 				BB000001 /* App */,
 				BB000002 /* Features */,
 				BB000010 /* Domain */,
