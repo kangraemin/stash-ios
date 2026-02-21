@@ -25,6 +25,7 @@
 		EE000005 /* ContentMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000015 /* ContentMapper.swift */; };
 		EE000006 /* ContentMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000016 /* ContentMapperTests.swift */; };
 		EE000007 /* ContentClientLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000017 /* ContentClientLive.swift */; };
+		EE000008 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = EE000201 /* Dependencies */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA000005 /* ComposableArchitecture in Frameworks */,
+				EE000008 /* Dependencies in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +374,7 @@
 			name = Stash;
 			packageProductDependencies = (
 				AA000201 /* ComposableArchitecture */,
+				EE000201 /* Dependencies */,
 			);
 			productName = Stash;
 			productReference = AA000060 /* Stash.app */;
@@ -448,6 +451,7 @@
 			mainGroup = AA000080;
 			packageReferences = (
 				AA000200 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				EE000200 /* XCRemoteSwiftPackageReference "swift-dependencies" */,
 			);
 			productRefGroup = AA000083 /* Products */;
 			projectDirPath = "";
@@ -678,10 +682,6 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kangraemin.stash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -712,10 +712,6 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kangraemin.stash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -866,6 +862,14 @@
 				minimumVersion = 1.17.1;
 			};
 		};
+		EE000200 /* XCRemoteSwiftPackageReference "swift-dependencies" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-dependencies";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -878,6 +882,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AA000200 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		EE000201 /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE000200 /* XCRemoteSwiftPackageReference "swift-dependencies" */;
+			productName = Dependencies;
 		};
 /* End XCSwiftPackageProductDependency section */
 
