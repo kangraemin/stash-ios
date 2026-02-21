@@ -13,6 +13,8 @@
 		AA000004 /* StashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000014 /* StashTests.swift */; };
 		AA000005 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = AA000201 /* ComposableArchitecture */; };
 		AA000006 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = AA000202 /* ComposableArchitecture */; };
+		CC000001 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000011 /* ShareViewController.swift */; };
+		CC000002 /* StashShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CC000060 /* StashShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +25,28 @@
 			remoteGlobalIDString = AA000050;
 			remoteInfo = Stash;
 		};
+		CC000030 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA000040 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC000050;
+			remoteInfo = StashShareExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CC000070 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CC000002 /* StashShareExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AA000011 /* StashApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashApp.swift; sourceTree = "<group>"; };
@@ -33,6 +56,10 @@
 		AA000015 /* Stash.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Stash.entitlements; sourceTree = "<group>"; };
 		AA000060 /* Stash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA000061 /* StashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC000011 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		CC000012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC000013 /* StashShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StashShareExtension.entitlements; sourceTree = "<group>"; };
+		CC000060 /* StashShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StashShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +79,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CC000071 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				AA000081 /* Stash */,
+				CC000080 /* StashShareExtension */,
 				AA000082 /* StashTests */,
 				AA000083 /* Products */,
 			);
@@ -243,6 +278,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		CC000080 /* StashShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				CC000013 /* StashShareExtension.entitlements */,
+				CC000011 /* ShareViewController.swift */,
+				CC000012 /* Info.plist */,
+			);
+			path = StashShareExtension;
+			sourceTree = "<group>";
+		};
 		AA000082 /* StashTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +301,7 @@
 			children = (
 				AA000060 /* Stash.app */,
 				AA000061 /* StashTests.xctest */,
+				CC000060 /* StashShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -270,10 +316,12 @@
 				AA000100 /* Sources */,
 				AA000070 /* Frameworks */,
 				AA000101 /* Resources */,
+				CC000070 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CC000031 /* PBXTargetDependency */,
 			);
 			name = Stash;
 			packageProductDependencies = (
@@ -304,6 +352,23 @@
 			productReference = AA000061 /* StashTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CC000050 /* StashShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC000090 /* Build configuration list for PBXNativeTarget "StashShareExtension" */;
+			buildPhases = (
+				CC000100 /* Sources */,
+				CC000071 /* Frameworks */,
+				CC000101 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StashShareExtension;
+			productName = StashShareExtension;
+			productReference = CC000060 /* StashShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -320,6 +385,9 @@
 					AA000051 = {
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = AA000050;
+					};
+					CC000050 = {
+						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
@@ -341,6 +409,7 @@
 			targets = (
 				AA000050 /* Stash */,
 				AA000051 /* StashTests */,
+				CC000050 /* StashShareExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -355,6 +424,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AA000103 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC000101 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -381,6 +457,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CC000100 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC000001 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -388,6 +472,11 @@
 			isa = PBXTargetDependency;
 			target = AA000050 /* Stash */;
 			targetProxy = AA000030 /* PBXContainerItemProxy */;
+		};
+		CC000031 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC000050 /* StashShareExtension */;
+			targetProxy = CC000030 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -607,6 +696,60 @@
 			};
 			name = Release;
 		};
+		CC0000B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StashShareExtension/StashShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StashShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StashShareExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kangraemin.stash.share-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CC0000B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StashShareExtension/StashShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StashShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StashShareExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kangraemin.stash.share-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -633,6 +776,15 @@
 			buildConfigurations = (
 				AA0000A0 /* Debug */,
 				AA0000A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC000090 /* Build configuration list for PBXNativeTarget "StashShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC0000B0 /* Debug */,
+				CC0000B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
