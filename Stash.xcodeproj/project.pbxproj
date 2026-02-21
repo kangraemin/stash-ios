@@ -61,6 +61,7 @@
 		CC000012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC000013 /* StashShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StashShareExtension.entitlements; sourceTree = "<group>"; };
 		CC000060 /* StashShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StashShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD000011 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +186,7 @@
 		BB000011 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DD000011 /* ContentType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -447,6 +449,7 @@
 			files = (
 				AA000001 /* StashApp.swift in Sources */,
 				AA000002 /* ContentView.swift in Sources */,
+				DD000001 /* ContentType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
