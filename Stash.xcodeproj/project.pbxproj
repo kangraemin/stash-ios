@@ -66,11 +66,179 @@
 		AA000081 /* Stash */ = {
 			isa = PBXGroup;
 			children = (
-				AA000011 /* StashApp.swift */,
-				AA000012 /* ContentView.swift */,
+				BB000001 /* App */,
+				BB000002 /* Features */,
+				BB000010 /* Domain */,
+				BB000020 /* Data */,
+				BB000030 /* ML */,
+				BB000040 /* Shared */,
+				BB000050 /* Resources */,
 				AA000013 /* Assets.xcassets */,
 			);
 			path = Stash;
+			sourceTree = "<group>";
+		};
+		BB000001 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AA000011 /* StashApp.swift */,
+				AA000012 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BB000002 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				BB000003 /* Home */,
+				BB000004 /* Search */,
+				BB000005 /* Detail */,
+				BB000006 /* CategoryList */,
+				BB000007 /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		BB000003 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BB000004 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		BB000005 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		BB000006 /* CategoryList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CategoryList;
+			sourceTree = "<group>";
+		};
+		BB000007 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		BB000010 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				BB000011 /* Models */,
+				BB000012 /* ContentParsing */,
+				BB000013 /* Services */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		BB000011 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BB000012 /* ContentParsing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ContentParsing;
+			sourceTree = "<group>";
+		};
+		BB000013 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BB000020 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BB000021 /* SwiftData */,
+				BB000022 /* Clients */,
+				BB000023 /* Mappers */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BB000021 /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
+		BB000022 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		BB000023 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		BB000030 /* ML */ = {
+			isa = PBXGroup;
+			children = (
+				BB000031 /* EmbeddingService */,
+				BB000032 /* VectorSearch */,
+			);
+			path = ML;
+			sourceTree = "<group>";
+		};
+		BB000031 /* EmbeddingService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EmbeddingService;
+			sourceTree = "<group>";
+		};
+		BB000032 /* VectorSearch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VectorSearch;
+			sourceTree = "<group>";
+		};
+		BB000040 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BB000041 /* AppGroup */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		BB000041 /* AppGroup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppGroup;
+			sourceTree = "<group>";
+		};
+		BB000050 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		AA000082 /* StashTests */ = {
