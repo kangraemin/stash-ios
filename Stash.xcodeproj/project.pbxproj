@@ -27,6 +27,7 @@
 		EE000008 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = EE000201 /* Dependencies */; };
 		FF000001 /* HomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000011 /* HomeFeature.swift */; };
 		FF000005 /* HomeFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000012 /* HomeFeatureTests.swift */; };
+		FF000007 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000013 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		EE000017 /* ContentClientLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentClientLive.swift; sourceTree = "<group>"; };
 		FF000011 /* HomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
 		FF000012 /* HomeFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeatureTests.swift; sourceTree = "<group>"; };
+		FF000013 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				FF000011 /* HomeFeature.swift */,
+				FF000013 /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				EE000005 /* ContentMapper.swift in Sources */,
 				EE000007 /* ContentClientLive.swift in Sources */,
 				FF000001 /* HomeFeature.swift in Sources */,
+				FF000007 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
