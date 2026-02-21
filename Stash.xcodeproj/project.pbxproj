@@ -17,6 +17,7 @@
 		CC000002 /* StashShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CC000060 /* StashShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DD000001 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000011 /* ContentType.swift */; };
 		DD000002 /* SavedContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000012 /* SavedContent.swift */; };
+		DD000003 /* SavedContent+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000013 /* SavedContent+Mock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		CC000060 /* StashShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StashShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD000011 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		DD000012 /* SavedContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedContent.swift; sourceTree = "<group>"; };
+		DD000013 /* SavedContent+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedContent+Mock.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			children = (
 				DD000011 /* ContentType.swift */,
 				DD000012 /* SavedContent.swift */,
+				DD000013 /* SavedContent+Mock.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				AA000002 /* ContentView.swift in Sources */,
 				DD000001 /* ContentType.swift in Sources */,
 				DD000002 /* SavedContent.swift in Sources */,
+				DD000003 /* SavedContent+Mock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
