@@ -1,0 +1,16 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+*.xcuserdatad
+xcuserdata/
+
+# SPM
+.build/
+Package.resolved
+
+# OS
+.DS_Store
+
+# Worklogs snapshot
+.worklogs/.snapshot
