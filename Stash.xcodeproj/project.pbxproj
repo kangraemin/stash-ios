@@ -22,6 +22,8 @@
 		EE000002 /* ContentTypeParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000012 /* ContentTypeParserTests.swift */; };
 		EE000003 /* SDContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000013 /* SDContent.swift */; };
 		EE000004 /* ContentClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000014 /* ContentClient.swift */; };
+		EE000005 /* ContentMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000015 /* ContentMapper.swift */; };
+		EE000006 /* ContentMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000016 /* ContentMapperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		EE000012 /* ContentTypeParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTypeParserTests.swift; sourceTree = "<group>"; };
 		EE000013 /* SDContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDContent.swift; sourceTree = "<group>"; };
 		EE000014 /* ContentClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentClient.swift; sourceTree = "<group>"; };
+		EE000015 /* ContentMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMapper.swift; sourceTree = "<group>"; };
+		EE000016 /* ContentMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMapperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +253,7 @@
 		BB000023 /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
+				EE000015 /* ContentMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 			children = (
 				AA000014 /* StashTests.swift */,
 				EE000080 /* Domain */,
+				EE000081 /* Data */,
 			);
 			path = StashTests;
 			sourceTree = "<group>";
@@ -323,6 +329,14 @@
 				EE000012 /* ContentTypeParserTests.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		EE000081 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EE000016 /* ContentMapperTests.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		AA000083 /* Products */ = {
@@ -481,6 +495,7 @@
 				EE000001 /* ContentTypeParser.swift in Sources */,
 				EE000003 /* SDContent.swift in Sources */,
 				EE000004 /* ContentClient.swift in Sources */,
+				EE000005 /* ContentMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +505,7 @@
 			files = (
 				AA000004 /* StashTests.swift in Sources */,
 				EE000002 /* ContentTypeParserTests.swift in Sources */,
+				EE000006 /* ContentMapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
