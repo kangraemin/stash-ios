@@ -4,19 +4,35 @@ struct ContentCardView: View {
     let content: SavedContent
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            thumbnail
-            textArea
+        Group {
+            switch content.contentType {
+            case .youtube:
+                YouTubeCardView(content: content)
+            case .instagram:
+                InstagramCardView(content: content)
+            case .naverMap, .googleMap:
+                PlaceCardView(content: content)
+            case .coupang:
+                ShoppingCardView(content: content)
+            case .web:
+                WebCardView(content: content)
+            }
         }
         .background(Color(.systemBackground))
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .shadow(color: .black.opacity(0.08), radius: 4, x: 0, y: 2)
     }
+}
 
-    // MARK: - Thumbnail
+// MARK: - Shared Thumbnail
 
-    private var thumbnail: some View {
-        AsyncImage(url: content.thumbnailURL) { phase in
+private struct CardThumbnail: View {
+    let url: URL?
+    let aspectRatio: CGFloat
+    let iconName: String
+
+    var body: some View {
+        AsyncImage(url: url) { phase in
             switch phase {
             case .success(let image):
                 image
@@ -31,7 +47,7 @@ struct ContentCardView: View {
                 placeholder
             }
         }
-        .frame(height: 100)
+        .aspectRatio(aspectRatio, contentMode: .fit)
         .clipped()
     }
 
@@ -44,39 +60,161 @@ struct ContentCardView: View {
                     .foregroundStyle(.secondary)
             }
     }
+}
 
-    // MARK: - Text Area
+// MARK: - YouTube Card
 
-    private var textArea: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(content.title)
-                .font(.footnote)
-                .fontWeight(.medium)
-                .lineLimit(2)
-                .foregroundStyle(.primary)
+private struct YouTubeCardView: View {
+    let content: SavedContent
 
-            Text(content.url.host ?? "")
-                .font(.caption2)
-                .foregroundStyle(.secondary)
-                .lineLimit(1)
-        }
-        .padding(10)
-    }
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            CardThumbnail(url: content.thumbnailURL, aspectRatio: 16 / 9, iconName: "play.rectangle.fill")
 
-    // MARK: - Icon
+            VStack(alignment: .leading, spacing: 4) {
+                Text(content.title)
+                    .font(.footnote)
+                    .fontWeight(.medium)
+                    .lineLimit(2)
 
-    private var iconName: String {
-        switch content.contentType {
-        case .youtube: "play.rectangle.fill"
-        case .instagram: "camera.fill"
-        case .naverMap, .googleMap: "map.fill"
-        case .coupang: "cart.fill"
-        case .web: "globe"
+                HStack(spacing: 4) {
+                    if let channel = content.metadata["channelName"] {
+                        Text(channel)
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                    }
+                    if let duration = content.metadata["duration"] {
+                        Text("·")
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                        Text(duration)
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            }
+            .padding(10)
         }
     }
 }
 
-// MARK: - Preview
+// MARK: - Instagram Card
+
+private struct InstagramCardView: View {
+    let content: SavedContent
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            CardThumbnail(url: content.thumbnailURL, aspectRatio: 1, iconName: "camera.fill")
+
+            VStack(alignment: .leading, spacing: 4) {
+                if let username = content.metadata["username"] {
+                    Text("@\(username)")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                        .lineLimit(1)
+                }
+
+                if let summary = content.summary {
+                    Text(summary)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                }
+            }
+            .padding(10)
+        }
+    }
+}
+
+// MARK: - Place Card
+
+private struct PlaceCardView: View {
+    let content: SavedContent
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            CardThumbnail(url: content.thumbnailURL, aspectRatio: 4 / 3, iconName: "map.fill")
+
+            VStack(alignment: .leading, spacing: 4) {
+                HStack(spacing: 4) {
+                    Text(content.title)
+                        .font(.footnote)
+                        .fontWeight(.medium)
+                        .lineLimit(1)
+
+                    Spacer(minLength: 0)
+
+                    Image(systemName: content.contentType == .naverMap ? "n.square.fill" : "g.square.fill")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
+                if let address = content.metadata["address"] {
+                    Text(address)
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                }
+            }
+            .padding(10)
+        }
+    }
+}
+
+// MARK: - Shopping Card
+
+private struct ShoppingCardView: View {
+    let content: SavedContent
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            CardThumbnail(url: content.thumbnailURL, aspectRatio: 1, iconName: "cart.fill")
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text(content.title)
+                    .font(.footnote)
+                    .fontWeight(.medium)
+                    .lineLimit(2)
+
+                if let price = content.metadata["price"] {
+                    Text(price)
+                        .font(.footnote)
+                        .fontWeight(.bold)
+                        .foregroundStyle(.red)
+                }
+            }
+            .padding(10)
+        }
+    }
+}
+
+// MARK: - Web Card (기본)
+
+private struct WebCardView: View {
+    let content: SavedContent
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            CardThumbnail(url: content.thumbnailURL, aspectRatio: 16 / 9, iconName: "globe")
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text(content.title)
+                    .font(.footnote)
+                    .fontWeight(.medium)
+                    .lineLimit(2)
+
+                Text(content.url.host ?? "")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+            }
+            .padding(10)
+        }
+    }
+}
+
+// MARK: - Previews
 
 #Preview("Web") {
     ContentCardView(content: .mock)
@@ -90,15 +228,43 @@ struct ContentCardView: View {
         .padding()
 }
 
+#Preview("Instagram") {
+    ContentCardView(content: .mockInstagram)
+        .frame(width: 180)
+        .padding()
+}
+
+#Preview("Place - Naver") {
+    ContentCardView(content: .mockNaverMap)
+        .frame(width: 180)
+        .padding()
+}
+
+#Preview("Place - Google") {
+    ContentCardView(content: .mockGoogleMap)
+        .frame(width: 180)
+        .padding()
+}
+
+#Preview("Shopping") {
+    ContentCardView(content: .mockCoupang)
+        .frame(width: 180)
+        .padding()
+}
+
 #Preview("Grid") {
-    LazyVGrid(
-        columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)],
-        spacing: 12
-    ) {
-        ContentCardView(content: .mock)
-        ContentCardView(content: .mockYouTube)
-        ContentCardView(content: .mockInstagram)
-        ContentCardView(content: .mockCoupang)
+    ScrollView {
+        LazyVGrid(
+            columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)],
+            spacing: 12
+        ) {
+            ContentCardView(content: .mock)
+            ContentCardView(content: .mockYouTube)
+            ContentCardView(content: .mockInstagram)
+            ContentCardView(content: .mockNaverMap)
+            ContentCardView(content: .mockGoogleMap)
+            ContentCardView(content: .mockCoupang)
+        }
+        .padding()
     }
-    .padding()
 }
