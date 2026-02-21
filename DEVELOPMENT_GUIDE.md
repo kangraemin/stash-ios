@@ -37,6 +37,7 @@
 | [Coding Conventions](docs/CODING_CONVENTIONS.md) | 네이밍, 파일 구성, 코드 스타일, TCA 규칙 |
 | [Testing](docs/TESTING.md) | Swift Testing + TestStore 패턴, 빌드/테스트 명령어 |
 | [SwiftUI + TCA Guide](docs/SWIFTUI_GUIDE.md) | View-Store 연결, Navigation, 비동기 패턴 |
+| [UX Guide](docs/UX_GUIDE.md) | 저장 플로우, 화면 구성, 카드 디자인, 검색 UX |
 | [단계별 개발 원칙](~/.claude/guides/common/phase-development.md) | Phase/Step 구조, 완료 조건 (글로벌) |
 | [팀 워크플로우](~/.claude/guides/common/team-workflow.md) | Lead/Dev/QA 역할 (글로벌) |
 | [Git Rules](~/.claude/rules/git-rules.md) | 커밋, 푸시, PR 규칙 (글로벌) |
