@@ -8,11 +8,15 @@ struct ContentClient {
 }
 
 extension ContentClient: DependencyKey {
-    static let liveValue = ContentClient(
-        save: { _ in fatalError("liveValue not implemented yet") },
-        fetch: { fatalError("liveValue not implemented yet") },
-        delete: { _ in fatalError("liveValue not implemented yet") }
-    )
+    static let liveValue: ContentClient = {
+        let container = try! ContentModelActor.makeContainer()
+        let actor = ContentModelActor(modelContainer: container)
+        return ContentClient(
+            save: { content in try await actor.save(content) },
+            fetch: { try await actor.fetchAll() },
+            delete: { id in try await actor.delete(id: id) }
+        )
+    }()
 
     static let testValue = ContentClient(
         save: { _ in },

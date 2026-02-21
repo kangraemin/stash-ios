@@ -24,6 +24,7 @@
 		EE000004 /* ContentClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000014 /* ContentClient.swift */; };
 		EE000005 /* ContentMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000015 /* ContentMapper.swift */; };
 		EE000006 /* ContentMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000016 /* ContentMapperTests.swift */; };
+		EE000007 /* ContentClientLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000017 /* ContentClientLive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		EE000014 /* ContentClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentClient.swift; sourceTree = "<group>"; };
 		EE000015 /* ContentMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMapper.swift; sourceTree = "<group>"; };
 		EE000016 /* ContentMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMapperTests.swift; sourceTree = "<group>"; };
+		EE000017 /* ContentClientLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentClientLive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 		BB000022 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				EE000017 /* ContentClientLive.swift */,
 			);
 			path = Clients;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				EE000003 /* SDContent.swift in Sources */,
 				EE000004 /* ContentClient.swift in Sources */,
 				EE000005 /* ContentMapper.swift in Sources */,
+				EE000007 /* ContentClientLive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
