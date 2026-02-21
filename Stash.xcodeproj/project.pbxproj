@@ -15,6 +15,7 @@
 		AA000006 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = AA000202 /* ComposableArchitecture */; };
 		CC000001 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000011 /* ShareViewController.swift */; };
 		CC000002 /* StashShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CC000060 /* StashShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DD000001 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000011 /* ContentType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
