@@ -6,9 +6,8 @@ struct MetadataClient {
 }
 
 extension MetadataClient: DependencyKey {
-    // Step 3.5에서 OGTagParser 연결
     static let liveValue = MetadataClient(
-        fetch: { _ in ContentMetadata() }
+        fetch: { url in try await OGTagParser.parse(from: url) }
     )
 
     static let testValue = MetadataClient(

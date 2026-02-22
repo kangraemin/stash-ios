@@ -43,6 +43,8 @@
 		II000006 /* SDContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000013 /* SDContent.swift */; };
 		II000007 /* ContentMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE000015 /* ContentMapper.swift */; };
 		II000008 /* ShareExtensionSaverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = II000012 /* ShareExtensionSaverTests.swift */; };
+		JJ000001 /* MetadataClientLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = JJ000011 /* MetadataClientLive.swift */; };
+		JJ000002 /* OGTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = JJ000012 /* OGTagParserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,8 @@
 		HH000013 /* MetadataClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataClientTests.swift; sourceTree = "<group>"; };
 		II000011 /* ShareExtensionSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareExtensionSaver.swift; sourceTree = "<group>"; };
 		II000012 /* ShareExtensionSaverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareExtensionSaverTests.swift; sourceTree = "<group>"; };
+		JJ000011 /* MetadataClientLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataClientLive.swift; sourceTree = "<group>"; };
+		JJ000012 /* OGTagParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OGTagParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				EE000017 /* ContentClientLive.swift */,
+				JJ000011 /* MetadataClientLive.swift */,
 			);
 			path = Clients;
 			sourceTree = "<group>";
@@ -394,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				EE000016 /* ContentMapperTests.swift */,
+				JJ000012 /* OGTagParserTests.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -562,6 +568,7 @@
 				HH000001 /* ContentMetadata.swift in Sources */,
 				HH000002 /* MetadataClient.swift in Sources */,
 				II000001 /* ShareExtensionSaver.swift in Sources */,
+				JJ000001 /* MetadataClientLive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +583,7 @@
 				GG000003 /* URLExtractorTests.swift in Sources */,
 				HH000003 /* MetadataClientTests.swift in Sources */,
 				II000008 /* ShareExtensionSaverTests.swift in Sources */,
+				JJ000002 /* OGTagParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
