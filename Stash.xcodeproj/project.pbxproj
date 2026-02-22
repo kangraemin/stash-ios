@@ -50,6 +50,8 @@
 		KK000003 /* DeepLinkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = KK000013 /* DeepLinkBuilder.swift */; };
 		KK000004 /* OpenURLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = KK000014 /* OpenURLClient.swift */; };
 		KK000005 /* DeepLinkBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = KK000015 /* DeepLinkBuilderTests.swift */; };
+		LL000001 /* SearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = LL000011 /* SearchClient.swift */; };
+		LL000002 /* EmbeddingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = LL000012 /* EmbeddingClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,8 @@
 		KK000013 /* DeepLinkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkBuilder.swift; sourceTree = "<group>"; };
 		KK000014 /* OpenURLClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURLClient.swift; sourceTree = "<group>"; };
 		KK000015 /* DeepLinkBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkBuilderTests.swift; sourceTree = "<group>"; };
+		LL000011 /* SearchClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchClient.swift; sourceTree = "<group>"; };
+		LL000012 /* EmbeddingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddingClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,8 +277,10 @@
 			isa = PBXGroup;
 			children = (
 				EE000014 /* ContentClient.swift */,
+				LL000012 /* EmbeddingClient.swift */,
 				HH000012 /* MetadataClient.swift */,
 				KK000014 /* OpenURLClient.swift */,
+				LL000011 /* SearchClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -588,6 +594,8 @@
 				KK000002 /* DetailView.swift in Sources */,
 				KK000003 /* DeepLinkBuilder.swift in Sources */,
 				KK000004 /* OpenURLClient.swift in Sources */,
+				LL000001 /* SearchClient.swift in Sources */,
+				LL000002 /* EmbeddingClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
