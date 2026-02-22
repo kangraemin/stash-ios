@@ -1,31 +1,15 @@
-import Social
 import UIKit
 import UniformTypeIdentifiers
 
-class ShareViewController: SLComposeServiceViewController {
+class ShareViewController: UIViewController {
 
-    override func isContentValid() -> Bool {
-        return true
-    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-    override func didSelectPost() {
-        guard let extensionItem = extensionContext?.inputItems.first as? NSExtensionItem,
-              let itemProvider = extensionItem.attachments?.first else {
-            extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
-            return
+        URLExtractor.extractURL(from: extensionContext?.inputItems) { [weak self] url in
+            // TODO: Step 3.2에서 SwiftData 저장 구현
+            // TODO: Step 3.3에서 토스트 피드백 구현
+            self?.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
         }
-
-        if itemProvider.hasItemConformingToTypeIdentifier(UTType.url.identifier) {
-            itemProvider.loadItem(forTypeIdentifier: UTType.url.identifier) { [weak self] item, _ in
-                // Phase 3에서 App Group을 통해 URL 저장 구현 예정
-                self?.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
-            }
-        } else {
-            extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
-        }
-    }
-
-    override func configurationItems() -> [Any]! {
-        return []
     }
 }

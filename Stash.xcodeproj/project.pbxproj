@@ -29,6 +29,9 @@
 		FF000007 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000013 /* HomeView.swift */; };
 		FF000021 /* ContentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000022 /* ContentCardView.swift */; };
 		FF000031 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF000032 /* AppFeature.swift */; };
+		GG000001 /* URLExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000011 /* URLExtractor.swift */; };
+		GG000002 /* URLExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000011 /* URLExtractor.swift */; };
+		GG000003 /* URLExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = GG000012 /* URLExtractorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,8 @@
 		FF000013 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FF000022 /* ContentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardView.swift; sourceTree = "<group>"; };
 		FF000032 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
+		GG000011 /* URLExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtractor.swift; sourceTree = "<group>"; };
+		GG000012 /* URLExtractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtractorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +311,7 @@
 		BB000041 /* AppGroup */ = {
 			isa = PBXGroup;
 			children = (
+				GG000011 /* URLExtractor.swift */,
 			);
 			path = AppGroup;
 			sourceTree = "<group>";
@@ -334,8 +340,17 @@
 				EE000080 /* Domain */,
 				EE000081 /* Data */,
 				FF000082 /* Features */,
+				GG000080 /* Shared */,
 			);
 			path = StashTests;
+			sourceTree = "<group>";
+		};
+		GG000080 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				GG000012 /* URLExtractorTests.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		FF000082 /* Features */ = {
@@ -522,6 +537,7 @@
 				FF000007 /* HomeView.swift in Sources */,
 				FF000021 /* ContentCardView.swift in Sources */,
 				FF000031 /* AppFeature.swift in Sources */,
+				GG000001 /* URLExtractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +549,7 @@
 				EE000002 /* ContentTypeParserTests.swift in Sources */,
 				EE000006 /* ContentMapperTests.swift in Sources */,
 				FF000005 /* HomeFeatureTests.swift in Sources */,
+				GG000003 /* URLExtractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC000001 /* ShareViewController.swift in Sources */,
+				GG000002 /* URLExtractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
