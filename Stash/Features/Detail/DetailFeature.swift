@@ -27,11 +27,18 @@ struct DetailFeature {
     }
 
     @Dependency(\.contentClient) var contentClient
+    @Dependency(\.openURLClient) var openURLClient
 
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .openButtonTapped, .deleteButtonTapped, .alert, .delegate:
+            case .openButtonTapped:
+                let url = DeepLinkBuilder.deepLinkURL(for: state.content)
+                return .run { [openURLClient] _ in
+                    _ = await openURLClient.open(url)
+                }
+
+            case .deleteButtonTapped, .alert, .delegate:
                 return .none
             }
         }

@@ -5,7 +5,7 @@ struct HomeView: View {
     @Bindable var store: StoreOf<HomeFeature>
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
             VStack(spacing: 0) {
                 filterChips
                     .padding(.vertical, 12)
@@ -26,6 +26,11 @@ struct HomeView: View {
             }
             .navigationTitle("Stash")
             .onAppear { store.send(.onAppear) }
+        } destination: { store in
+            switch store.case {
+            case .detail(let detailStore):
+                DetailView(store: detailStore)
+            }
         }
     }
 
@@ -41,7 +46,12 @@ struct HomeView: View {
                 spacing: 12
             ) {
                 ForEach(store.filteredContents) { content in
-                    ContentCardView(content: content)
+                    Button {
+                        store.send(.contentCardTapped(content))
+                    } label: {
+                        ContentCardView(content: content)
+                    }
+                    .buttonStyle(.plain)
                 }
             }
             .padding(.horizontal)

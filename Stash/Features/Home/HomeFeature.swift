@@ -3,8 +3,14 @@ import Foundation
 
 @Reducer
 struct HomeFeature {
+    @Reducer
+    enum Path {
+        case detail(DetailFeature)
+    }
+
     @ObservableState
     struct State: Equatable {
+        var path = StackState<Path.State>()
         var contents: IdentifiedArrayOf<SavedContent> = []
         var filteredContents: IdentifiedArrayOf<SavedContent> = []
         var selectedFilter: ContentFilter = .all
@@ -23,11 +29,13 @@ struct HomeFeature {
 
     enum Action {
         case onAppear
+        case contentCardTapped(SavedContent)
         case filterTapped(ContentFilter)
         case contentsLoaded([SavedContent])
         case contentsLoadFailed
         case metadataUpdateCompleted([SavedContent])
         case metadataUpdateFailed
+        case path(StackActionOf<Path>)
     }
 
     @Dependency(\.contentClient) var contentClient
@@ -38,6 +46,9 @@ struct HomeFeature {
             switch action {
             case .onAppear:
                 state.isLoading = true
+            case .contentCardTapped(let content):
+                state.path.append(.detail(DetailFeature.State(content: content)))
+                return .none
                 return .run { send in
                     do {
                         let contents = try await contentClient.fetch()
@@ -96,8 +107,12 @@ struct HomeFeature {
                 state.selectedFilter = filter
                 state.filteredContents = applyFilter(filter, to: state.contents)
                 return .none
+
+            case .path:
+                return .none
             }
         }
+        .forEach(\.path, action: \.path)
     }
 }
 
