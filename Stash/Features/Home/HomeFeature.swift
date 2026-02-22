@@ -43,6 +43,7 @@ struct HomeFeature {
         case contentsLoadFailed
         case metadataUpdateCompleted([SavedContent])
         case metadataUpdateFailed
+        case swipeDeleteTapped(SavedContent)
         case path(StackActionOf<Path>)
     }
 
@@ -115,6 +116,20 @@ struct HomeFeature {
             case .filterTapped(let filter):
                 state.selectedFilter = filter
                 state.filteredContents = applyFilter(filter, to: state.contents)
+                return .none
+
+            case .swipeDeleteTapped(let content):
+                let id = content.id
+                state.contents.remove(id: id)
+                state.filteredContents = applyFilter(state.selectedFilter, to: state.contents)
+                return .run { [contentClient] _ in
+                    try await contentClient.delete(id)
+                }
+
+            case .path(.element(_, action: .detail(.delegate(.contentDeleted(let id))))):
+                state.path.removeLast()
+                state.contents.remove(id: id)
+                state.filteredContents = applyFilter(state.selectedFilter, to: state.contents)
                 return .none
 
             case .path:

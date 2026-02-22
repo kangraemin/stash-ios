@@ -52,6 +52,13 @@ struct HomeView: View {
                         ContentCardView(content: content)
                     }
                     .buttonStyle(.plain)
+                    .contextMenu {
+                        Button(role: .destructive) {
+                            store.send(.swipeDeleteTapped(content))
+                        } label: {
+                            Label("삭제", systemImage: "trash")
+                        }
+                    }
                 }
             }
             .padding(.horizontal)

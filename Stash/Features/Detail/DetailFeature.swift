@@ -38,7 +38,29 @@ struct DetailFeature {
                     _ = await openURLClient.open(url)
                 }
 
-            case .deleteButtonTapped, .alert, .delegate:
+            case .deleteButtonTapped:
+                state.alert = AlertState {
+                    TextState("삭제하시겠습니까?")
+                } actions: {
+                    ButtonState(role: .destructive, action: .confirmDelete) {
+                        TextState("삭제")
+                    }
+                    ButtonState(role: .cancel) {
+                        TextState("취소")
+                    }
+                } message: {
+                    TextState("삭제된 콘텐츠는 복구할 수 없습니다.")
+                }
+                return .none
+
+            case .alert(.presented(.confirmDelete)):
+                let id = state.content.id
+                return .run { [contentClient] send in
+                    try await contentClient.delete(id)
+                    await send(.delegate(.contentDeleted(id)))
+                }
+
+            case .alert, .delegate:
                 return .none
             }
         }
