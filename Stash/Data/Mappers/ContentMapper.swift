@@ -37,7 +37,7 @@ enum ContentMapper {
         return (try? JSONDecoder().decode([String: String].self, from: data)) ?? [:]
     }
 
-    private static func encodeMetadata(_ metadata: [String: String]) -> String? {
+    static func encodeMetadata(_ metadata: [String: String]) -> String? {
         guard !metadata.isEmpty else { return nil }
         guard let data = try? JSONEncoder().encode(metadata) else { return nil }
         return String(data: data, encoding: .utf8)

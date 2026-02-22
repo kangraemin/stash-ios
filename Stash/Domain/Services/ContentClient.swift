@@ -5,6 +5,7 @@ struct ContentClient {
     var save: @Sendable (SavedContent) async throws -> Void
     var fetch: @Sendable () async throws -> [SavedContent]
     var delete: @Sendable (UUID) async throws -> Void
+    var update: @Sendable (SavedContent) async throws -> Void
 }
 
 extension ContentClient: DependencyKey {
@@ -14,14 +15,16 @@ extension ContentClient: DependencyKey {
         return ContentClient(
             save: { content in try await actor.save(content) },
             fetch: { try await actor.fetchAll() },
-            delete: { id in try await actor.delete(id: id) }
+            delete: { id in try await actor.delete(id: id) },
+            update: { content in try await actor.update(content) }
         )
     }()
 
     static let testValue = ContentClient(
         save: { _ in },
         fetch: { [] },
-        delete: { _ in }
+        delete: { _ in },
+        update: { _ in }
     )
 }
 

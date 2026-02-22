@@ -36,4 +36,17 @@ actor ContentModelActor {
             try modelContext.save()
         }
     }
+
+    func update(_ content: SavedContent) throws {
+        let targetID = content.id
+        let predicate = #Predicate<SDContent> { $0.id == targetID }
+        let descriptor = FetchDescriptor<SDContent>(predicate: predicate)
+        if let existing = try modelContext.fetch(descriptor).first {
+            existing.title = content.title
+            existing.thumbnailURLString = content.thumbnailURL?.absoluteString
+            existing.summary = content.summary
+            existing.metadataJSON = ContentMapper.encodeMetadata(content.metadata)
+            try modelContext.save()
+        }
+    }
 }
