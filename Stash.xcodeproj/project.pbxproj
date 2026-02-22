@@ -194,6 +194,29 @@
 			path = Stash;
 			sourceTree = "<group>";
 		};
+		AA000082 /* StashTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA000014 /* StashTests.swift */,
+				EE000080 /* Domain */,
+				EE000081 /* Data */,
+				FF000082 /* Features */,
+				NN000023 /* ML */,
+				GG000080 /* Shared */,
+			);
+			path = StashTests;
+			sourceTree = "<group>";
+		};
+		AA000083 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA000060 /* Stash.app */,
+				AA000061 /* StashTests.xctest */,
+				CC000060 /* StashShareExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		BB000001 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,36 +417,6 @@
 			path = StashShareExtension;
 			sourceTree = "<group>";
 		};
-		AA000082 /* StashTests */ = {
-			isa = PBXGroup;
-			children = (
-				AA000014 /* StashTests.swift */,
-				EE000080 /* Domain */,
-				EE000081 /* Data */,
-				FF000082 /* Features */,
-				NN000023 /* ML */,
-				GG000080 /* Shared */,
-			);
-			path = StashTests;
-			sourceTree = "<group>";
-		};
-		GG000080 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				II000012 /* ShareExtensionSaverTests.swift */,
-				GG000012 /* URLExtractorTests.swift */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		FF000082 /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				FF000012 /* HomeFeatureTests.swift */,
-			);
-			path = Features;
-			sourceTree = "<group>";
-		};
 		EE000080 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,22 +436,29 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		FF000082 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				FF000012 /* HomeFeatureTests.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		GG000080 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				II000012 /* ShareExtensionSaverTests.swift */,
+				GG000012 /* URLExtractorTests.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		NN000023 /* ML */ = {
 			isa = PBXGroup;
 			children = (
 				NN000013 /* VectorSearchServiceTests.swift */,
 			);
 			path = ML;
-			sourceTree = "<group>";
-		};
-		AA000083 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AA000060 /* Stash.app */,
-				AA000061 /* StashTests.xctest */,
-				CC000060 /* StashShareExtension.appex */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -805,7 +805,7 @@
 				CODE_SIGN_ENTITLEMENTS = Stash/Stash.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7LZK6PGS47;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -835,7 +835,7 @@
 				CODE_SIGN_ENTITLEMENTS = Stash/Stash.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7LZK6PGS47;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1021,7 +1021,6 @@
 			productName = Dependencies;
 		};
 /* End XCSwiftPackageProductDependency section */
-
 	};
 	rootObject = AA000040 /* Project object */;
 }
