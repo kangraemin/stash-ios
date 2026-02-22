@@ -54,6 +54,8 @@
 		LL000002 /* EmbeddingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = LL000012 /* EmbeddingClient.swift */; };
 		MM000001 /* SearchClientLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = MM000011 /* SearchClientLive.swift */; };
 		NN000001 /* EmbeddingClientLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = NN000011 /* EmbeddingClientLive.swift */; };
+		NN000002 /* VectorSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = NN000012 /* VectorSearchService.swift */; };
+		NN000003 /* VectorSearchServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = NN000013 /* VectorSearchServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +133,8 @@
 		LL000012 /* EmbeddingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddingClient.swift; sourceTree = "<group>"; };
 		MM000011 /* SearchClientLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchClientLive.swift; sourceTree = "<group>"; };
 		NN000011 /* EmbeddingClientLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddingClientLive.swift; sourceTree = "<group>"; };
+		NN000012 /* VectorSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorSearchService.swift; sourceTree = "<group>"; };
+		NN000013 /* VectorSearchServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorSearchServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +349,7 @@
 		BB000032 /* VectorSearch */ = {
 			isa = PBXGroup;
 			children = (
+				NN000012 /* VectorSearchService.swift */,
 			);
 			path = VectorSearch;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				EE000080 /* Domain */,
 				EE000081 /* Data */,
 				FF000082 /* Features */,
+				NN000023 /* ML */,
 				GG000080 /* Shared */,
 			);
 			path = StashTests;
@@ -429,6 +435,14 @@
 				JJ000012 /* OGTagParserTests.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		NN000023 /* ML */ = {
+			isa = PBXGroup;
+			children = (
+				NN000013 /* VectorSearchServiceTests.swift */,
+			);
+			path = ML;
 			sourceTree = "<group>";
 		};
 		AA000083 /* Products */ = {
@@ -604,6 +618,7 @@
 				LL000002 /* EmbeddingClient.swift in Sources */,
 				MM000001 /* SearchClientLive.swift in Sources */,
 				NN000001 /* EmbeddingClientLive.swift in Sources */,
+				NN000002 /* VectorSearchService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +635,7 @@
 				II000008 /* ShareExtensionSaverTests.swift in Sources */,
 				JJ000002 /* OGTagParserTests.swift in Sources */,
 				KK000005 /* DeepLinkBuilderTests.swift in Sources */,
+				NN000003 /* VectorSearchServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
