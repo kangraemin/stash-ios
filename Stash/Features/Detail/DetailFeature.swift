@@ -17,7 +17,7 @@ struct DetailFeature {
 
         @CasePathable
         enum Alert: Equatable {
-            case deleteConfirmed
+            case confirmDelete
         }
 
         @CasePathable
@@ -31,28 +31,7 @@ struct DetailFeature {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .openButtonTapped:
-                return .none
-
-            case .deleteButtonTapped:
-                state.alert = AlertState {
-                    TextState("삭제 확인")
-                } actions: {
-                    ButtonState(role: .destructive, action: .deleteConfirmed) {
-                        TextState("삭제")
-                    }
-                    ButtonState(role: .cancel) {
-                        TextState("취소")
-                    }
-                } message: {
-                    TextState("이 콘텐츠를 삭제하시겠습니까?")
-                }
-                return .none
-
-            case .alert:
-                return .none
-
-            case .delegate:
+            case .openButtonTapped, .deleteButtonTapped, .alert, .delegate:
                 return .none
             }
         }
