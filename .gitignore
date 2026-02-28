@@ -12,5 +12,11 @@ Package.resolved
 # OS
 .DS_Store
 
+# Secrets
+*.key
+*.pem
+*.token
+pypitxt
+
 # Worklogs snapshot
 .worklogs/.snapshot
